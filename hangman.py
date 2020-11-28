@@ -1,6 +1,7 @@
 from random import seed
 from random import choice
 
+
 class Settings():
     def __init__(self):
         self.gameactive = True
@@ -11,7 +12,7 @@ class Words():
     def __init__(self):
         self.worddisplay = ""
         self.guesslist = []
-    
+
     def pickword(self):
         while True:
             categories = ["sports", "musicians", "states"]
@@ -29,60 +30,55 @@ class Words():
             except FileNotFoundError:
                 print("Not a valid category")
 
-def Hangman(): 
+
+class Hangman():
     def __init__(self):
-        self.words = Words
-
-def startgame(Settings):
-    settings = Settings()
-    words = Words()
-    while True:
-        word = words.pickword()
-        displayword(settings, words, word)
-        while settings.gameactive:
-            userguess(settings, words, word)
-            displayword(settings, words, word)
-            updatestatus(settings, words, word)
-
-        break
-
-
-def displayword(settings, words, word):
-    worddisplay = ""
-    for p in word:
-        if (p.lower() in words.guesslist or p == " "):
-            worddisplay += p
+        self.words = Words()
+        self.settings = Settings()
+        
+    def displayword(self, word):
+        worddisplay = ""
+        for p in word:
+            if (p.lower() in self.words.guesslist or p == " "):
+                worddisplay += p
+            else:
+                worddisplay += "_ "
+            self.words.worddisplay = worddisplay
+        print(self.words.worddisplay)
+        print("Letters guessed so far " + str(self.words.guesslist))
+    
+    def userguess(self, word):
+        userguess = input().lower()
+        for i in userguess:
+            self.words.guesslist.append(i)
+        self.words.guesslist = list(set(self.words.guesslist))
+        if userguess in word.lower():
+            print("You got one!\n")
         else:
-            worddisplay += "_ "
-    words.worddisplay = worddisplay
-    print(words.worddisplay)
-    print("Letters guessed so far " + str(words.guesslist))
-
-
-def userguess(settings, words, word):
-    userguess = input().lower()
-    for i in userguess:
-        words.guesslist.append(i)
-    words.guesslist = list(set(words.guesslist))
-    if userguess in word.lower():
-        print("You got one!\n")
-    else:
-        print("Not in this word. Try again!")
-        settings.chances -= 1
-        print(str(settings.chances) + " trys remaining\n")
-
-
-def updatestatus(settings, words, word):
-    if words.worddisplay == word:
-        print("You win!")
-        settings.gameactive = False
-    if settings.chances == 0:
-        print("You lose!")
-        print(settings.chances)
-        print("The answer was: " + word)
-        settings.gameactive = False
-
-
+            print("Not in this word. Try again!")
+            self.settings.chances -= 1
+            print(str(self.settings.chances) + " trys remaining\n")
+    
+    def updatestatus(self, word):
+        if self.words.worddisplay == word:
+            print("You win!")
+            self.settings.gameactive = False
+        if self.settings.chances == 0:
+            print("You lose!")
+            print(self.settings.chances)
+            print("The answer was: " + word)
+            self.settings.gameactive = False
+        
+    def startgame(self):
+        while True:
+            word = self.words.pickword()
+            self.displayword(word)
+            while self.settings.gameactive:
+                self.userguess(word)
+                self.displayword(word)
+                self.updatestatus(word)
+            break
+            
 def playagain():
     playagain = input("Play again? (yes/no) ")
     if playagain == "yes":
@@ -92,7 +88,7 @@ def playagain():
 
 
 while True:
-    startgame(Settings)
+    hangman = Hangman()
+    hangman.startgame()
     playagain()
-
 
