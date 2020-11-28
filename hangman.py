@@ -1,12 +1,9 @@
-from random import seed
 from random import choice
-
 
 class Settings():
     def __init__(self):
         self.gameactive = True
         self.chances = 10
-
 
 class Words():
     def __init__(self):
@@ -29,7 +26,6 @@ class Words():
                 return randomword
             except FileNotFoundError:
                 print("Not a valid category")
-
 
 class Hangman():
     def __init__(self):
