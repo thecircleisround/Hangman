@@ -63,11 +63,11 @@ def userguess(settings, words, word):
         words.guesslist.append(i)
     words.guesslist = list(set(words.guesslist))
     if userguess in word.lower():
-        print("You got one!")
+        print("You got one!\n")
     else:
         print("Not in this word. Try again!")
         settings.chances -= 1
-        print(str(settings.chances) + " trys remaining")
+        print(str(settings.chances) + " trys remaining\n")
 
 
 def updatestatus(settings, words, word):
