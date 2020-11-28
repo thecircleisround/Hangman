@@ -1,0 +1,59 @@
+[
+  {
+    "nodes" : [
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{0, 401}, {320, 41}}",
+        "class" : "TextField",
+        "attributes" : {
+          "name" : "textfield1",
+          "text_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+          "frame" : "{{60, 224}, {200, 32}}",
+          "spellchecking_type" : "default",
+          "class" : "TextField",
+          "uuid" : "B9048AAB-4ADB-40C9-8FF4-70DC4053F478",
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "font_size" : 17,
+          "font_name" : "AlNile"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{6, 314}, {308, 33}}",
+        "class" : "TextView",
+        "attributes" : {
+          "uuid" : "94C51949-F71E-487C-976E-9DE127C3B015",
+          "font_size" : 17,
+          "background_color" : "RGBA(1.000000,0.939394,0.909091,1.000000)",
+          "frame" : "{{60, 140}, {200, 200}}",
+          "editable" : true,
+          "alignment" : "left",
+          "autocorrection_type" : "default",
+          "text_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+          "font_name" : "<System>",
+          "spellchecking_type" : "default",
+          "class" : "TextView",
+          "name" : "showword",
+          "flex" : "WH"
+        },
+        "selected" : true
+      }
+    ],
+    "frame" : "{{0, 0}, {320, 480}}",
+    "class" : "View",
+    "attributes" : {
+      "enabled" : true,
+      "background_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "tint_color" : "RGBA(0.000000,0.478000,1.000000,1.000000)",
+      "border_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
+      "flex" : ""
+    },
+    "selected" : false
+  }
+]
