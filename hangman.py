@@ -1,7 +1,6 @@
 from random import seed
 from random import choice
 
-
 class Settings():
     def __init__(self):
         self.gameactive = True
@@ -12,7 +11,7 @@ class Words():
     def __init__(self):
         self.worddisplay = ""
         self.guesslist = []
-
+    
     def pickword(self):
         while True:
             categories = ["sports", "musicians", "states"]
@@ -30,6 +29,9 @@ class Words():
             except FileNotFoundError:
                 print("Not a valid category")
 
+def Hangman(): 
+    def __init__(self):
+        self.words = Words
 
 def startgame(Settings):
     settings = Settings()
@@ -92,4 +94,5 @@ def playagain():
 while True:
     startgame(Settings)
     playagain()
+
 
