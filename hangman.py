@@ -1,7 +1,7 @@
 from random import choice
 import ui
 
-ui.load_view('load_ui').present('sheet')
+#ui.load_view('load_ui').present('sheet')
 
 class Settings():
     def __init__(self):
