@@ -94,9 +94,6 @@ def playagain():
     else:
         quit()
 
-              
-
-
 view.present('sheet')
 while True: 
     hangman = Hangman()
