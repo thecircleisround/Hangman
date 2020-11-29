@@ -32,7 +32,7 @@
           "font_size" : 17,
           "background_color" : "RGBA(1.000000,0.939394,0.909091,1.000000)",
           "frame" : "{{60, 140}, {200, 200}}",
-          "editable" : true,
+          "editable" : false,
           "alignment" : "left",
           "autocorrection_type" : "default",
           "text_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
@@ -41,6 +41,23 @@
           "class" : "TextView",
           "name" : "showword",
           "flex" : "WH"
+        },
+        "selected" : false
+      },
+      {
+        "nodes" : [
+
+        ],
+        "frame" : "{{234, 401}, {80, 38}}",
+        "class" : "Button",
+        "attributes" : {
+          "action" : "button_tapped",
+          "frame" : "{{120, 224}, {80, 32}}",
+          "title" : "Start",
+          "uuid" : "FCCA816F-5515-47F7-8750-9234DE4A124E",
+          "class" : "Button",
+          "name" : "submit",
+          "font_size" : 15
         },
         "selected" : true
       }

@@ -1,8 +1,6 @@
 from random import choice
 import ui
-
-ui.load_view('load_ui').present('sheet')
-
+        
 class Settings():
     def __init__(self):
         self.gameactive = True
@@ -55,16 +53,15 @@ class Hangman():
             print("You got one!\n")
         else:
             print("Not in this word. Try again!")
-            self.settings.chances -= 1
+            self.settings.chances -= len(userguess) 
             print(str(self.settings.chances) + " trys remaining\n")
     
     def updatestatus(self, word):
         if self.words.worddisplay == word:
             print("You win!")
             self.settings.gameactive = False
-        if self.settings.chances == 0:
+        if self.settings.chances <= 0:
             print("You lose!")
-            print(self.settings.chances)
             print("The answer was: " + word)
             self.settings.gameactive = False
         
@@ -79,15 +76,15 @@ class Hangman():
             break
             
 def playagain():
-    playagain = input("Play again? (yes/no) ")
+    playagain = input("\nPlay again? (yes/no) ")
     if playagain == "yes":
         pass
     else:
         quit()
 
-
-while True:
+while True: 
     hangman = Hangman()
     hangman.startgame()
     playagain()
-
+    
+    
