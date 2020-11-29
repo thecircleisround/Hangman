@@ -4,6 +4,10 @@ import ui
 def button_tapped(sender):
     pass
 
+def userentry(sender): 
+    view['showword'].text = "banana"
+    view['userentry'].text = ""
+
 view = ui.load_view('load_ui')
 
 class Settings():
@@ -93,7 +97,7 @@ def playagain():
               
 
 
-view.present()
+view.present('sheet')
 while True: 
     hangman = Hangman()
     hangman.startgame()
