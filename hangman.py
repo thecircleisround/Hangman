@@ -1,6 +1,11 @@
 from random import choice
 import ui
-        
+
+def button_tapped(sender):
+    pass
+
+view = ui.load_view('load_ui')
+
 class Settings():
     def __init__(self):
         self.gameactive = True
@@ -10,14 +15,15 @@ class Words():
     def __init__(self):
         self.worddisplay = ""
         self.guesslist = []
+        self.showword = view['showword']
 
     def pickword(self):
         while True:
             categories = ["sports", "musicians", "states"]
 
-            print("Choose a category from the following list")
+            self.showword.text = "Choose a category from the following list"
             for category in categories:
-                print(category)
+                self.showword.text += "\n " + category
             category = input("> ")
             filename = (category + ".txt")
             try:
@@ -33,15 +39,17 @@ class Hangman():
         self.words = Words()
         self.settings = Settings()
         
+        
     def displayword(self, word):
         worddisplay = ""
+        
         for p in word:
             if (p.lower() in self.words.guesslist or p == " "):
                 worddisplay += p
             else:
                 worddisplay += "_ "
             self.words.worddisplay = worddisplay
-        print(self.words.worddisplay)
+        self.showword = self.words.worddisplay
         print("Letters guessed so far " + str(self.words.guesslist))
     
     def userguess(self, word):
@@ -82,6 +90,10 @@ def playagain():
     else:
         quit()
 
+              
+
+
+view.present()
 while True: 
     hangman = Hangman()
     hangman.startgame()
