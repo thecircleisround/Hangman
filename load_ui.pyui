@@ -5,33 +5,33 @@
         "nodes" : [
 
         ],
-        "frame" : "{{0, 401}, {320, 41}}",
+        "frame" : "{{0, 514}, {1024, 254}}",
         "class" : "TextField",
         "attributes" : {
           "uuid" : "B9048AAB-4ADB-40C9-8FF4-70DC4053F478",
           "background_color" : "RGBA(1.000000,0.636364,0.878788,1.000000)",
           "frame" : "{{60, 224}, {200, 32}}",
           "action" : "userentry",
-          "alignment" : "left",
+          "alignment" : "center",
           "autocorrection_type" : "default",
           "text_color" : "RGBA(0.000000,0.000000,0.000000,1.000000)",
           "font_name" : "AlNile",
           "spellchecking_type" : "default",
           "class" : "TextField",
           "name" : "userentry",
-          "font_size" : 17
+          "font_size" : 50
         },
-        "selected" : false
+        "selected" : true
       },
       {
         "nodes" : [
 
         ],
-        "frame" : "{{6, 140}, {291, 152}}",
+        "frame" : "{{0, 0}, {1024, 517}}",
         "class" : "TextView",
         "attributes" : {
           "uuid" : "94C51949-F71E-487C-976E-9DE127C3B015",
-          "font_size" : 25,
+          "font_size" : 50,
           "background_color" : "RGBA(1.000000,0.939394,0.909091,1.000000)",
           "frame" : "{{60, 140}, {200, 200}}",
           "editable" : false,
@@ -50,21 +50,22 @@
         "nodes" : [
 
         ],
-        "frame" : "{{234, 404}, {80, 38}}",
+        "frame" : "{{714, 514}, {310, 254}}",
         "class" : "Button",
         "attributes" : {
-          "action" : "button_tapped",
+          "action" : "userentry",
+          "flex" : "W",
           "frame" : "{{120, 224}, {80, 32}}",
           "title" : "Start",
           "uuid" : "FCCA816F-5515-47F7-8750-9234DE4A124E",
           "class" : "Button",
           "name" : "submit",
-          "font_size" : 15
+          "font_size" : 18
         },
         "selected" : false
       }
     ],
-    "frame" : "{{0, 0}, {320, 480}}",
+    "frame" : "{{0, 0}, {1024, 768}}",
     "class" : "View",
     "attributes" : {
       "enabled" : true,
