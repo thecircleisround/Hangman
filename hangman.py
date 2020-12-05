@@ -80,7 +80,7 @@ def playagain():
     if playagain == "yes":
         pass
     else:
-        quit()
+        exit()
 
 
 while True:
